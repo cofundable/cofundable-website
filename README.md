@@ -18,7 +18,7 @@
 
 <!-- /TOC -->
 
-<details>
+</details>
 
 ## About this Repo
 
