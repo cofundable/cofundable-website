@@ -1,26 +1,37 @@
-'use strict';
-const fs = require('fs');
-const packageJSON = require('../package.json');
-const upath = require('upath');
-const sh = require('shelljs');
+// builtins
+const fs = require("fs");
+// external dependencies
+const upath = require("upath");
+const sh = require("shelljs");
+// local dependencies
+const packageJSON = require("../package.json");
 
 module.exports = function renderScripts() {
+  const sourcePath = upath.resolve(upath.dirname(__filename), "../src/js");
+  const destPath = upath.resolve(upath.dirname(__filename), "../dist/.");
 
-    const sourcePath = upath.resolve(upath.dirname(__filename), '../src/js');
-    const destPath = upath.resolve(upath.dirname(__filename), '../dist/.');
+  sh.cp("-R", sourcePath, destPath);
 
-    sh.cp('-R', sourcePath, destPath)
+  const sourcePathScriptsJS = upath.resolve(
+    upath.dirname(__filename),
+    "../src/js/scripts.js"
+  );
+  const destPathScriptsJS = upath.resolve(
+    upath.dirname(__filename),
+    "../dist/js/scripts.js"
+  );
 
-    const sourcePathScriptsJS = upath.resolve(upath.dirname(__filename), '../src/js/scripts.js');
-    const destPathScriptsJS = upath.resolve(upath.dirname(__filename), '../dist/js/scripts.js');
-
-    const copyright = `/*!
-* Cofundable - ${packageJSON.title} v${packageJSON.version} (${packageJSON.homepage})
+  const copyright = `/*!
+* Cofundable - ${packageJSON.title} v${packageJSON.version} (${
+    packageJSON.homepage
+  })
 * Copyright 2021-${new Date().getFullYear()} ${packageJSON.author}
-* Licensed under ${packageJSON.license} (https://github.com/cofundable/${packageJSON.name}/blob/master/LICENSE)
+* Licensed under ${packageJSON.license} (https://github.com/cofundable/${
+    packageJSON.name
+  }/blob/master/LICENSE)
 */
-`
-    const scriptsJS = fs.readFileSync(sourcePathScriptsJS);
+`;
+  const scriptsJS = fs.readFileSync(sourcePathScriptsJS);
 
-    fs.writeFileSync(destPathScriptsJS, copyright + scriptsJS);
+  fs.writeFileSync(destPathScriptsJS, copyright + scriptsJS);
 };

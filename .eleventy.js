@@ -1,13 +1,13 @@
-module.exports = config => {
-  config.addPassthroughCopy('./src/assets/');
-  config.addPassthroughCopy('./src/js/');
+module.exports = (config) => {
+  config.addPassthroughCopy("./src/assets/");
+  config.addPassthroughCopy("./src/js/");
   return {
-    markdownTemplateEngine: 'pug',
-    dataTemplateEngine: 'pug',
-    htmlTemplateEngine: 'pug',
+    markdownTemplateEngine: "pug",
+    dataTemplateEngine: "pug",
+    htmlTemplateEngine: "pug",
     dir: {
-      input: 'src',
-      output: 'dist'
-    }
+      input: "src",
+      output: "dist",
+    },
   };
 };

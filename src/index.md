@@ -1,4 +1,4 @@
 ---
-title: 'Hello, world'
-layout: 'layouts/index.pug'
+title: "Hello, world"
+layout: "layouts/index.pug"
 ---
