@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "text": "Home",
+      "url": "/"
+    },
+    {
+      "text": "Docs & Help",
+      "url": "/"
+    },
+    {
+      "text": "How it Works",
+      "url": "/"
+    },
+    {
+      "text": "Blog",
+      "url": "/"
+    }
+  ],
+  "footers": {
+    "Platform": [
+      {
+        "text": "How it Works",
+        "url": "/"
+      },
+      {
+        "text": "Pricing",
+        "url": "/"
+      }
+    ],
+    "Join": [
+      {
+        "text": "Request Funding",
+        "url": "/"
+      },
+      {
+        "text": "Cofund a Project",
+        "url": "/"
+      }
+    ],
+    "Community": [
+      {
+        "text": "GitHub Repo",
+        "url": "/"
+      },
+      {
+        "text": "Slack Channel",
+        "url": "/"
+      }
+    ],
+    "Organization": [
+      {
+        "text": "Ipsum",
+        "url": "/"
+      },
+      {
+        "text": "Lorem",
+        "url": "/"
+      }
+    ]
+  }
+}
